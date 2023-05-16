@@ -16,6 +16,7 @@ import modelo.Alumno;
 import modelo.Conexion;
 
 public class SqlAlumno extends Conexion {
+
     private PreparedStatement ps = null;
     private Connection conn;
     private ResultSet rs;
@@ -26,7 +27,7 @@ public class SqlAlumno extends Conexion {
         try {
             conn = getConexion();
             ps = conn.prepareStatement(sql);
-            ps.setLong(1, alumno.getDNI());
+            ps.setInt(1, alumno.getDNI());
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, (alumno.getFecha_nacimiento()));
