@@ -31,7 +31,7 @@ public class SqlAlumno extends Conexion {
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, (alumno.getFecha_nacimiento()));
-            ps.setBoolean(5, alumno.isEstado());
+            ps.setDate(4, Date.valueOf(alumno.getFecha_nacimiento())); //parsear un LocalDate a Date de SQL
             ps.executeUpdate();
             conn.close();
             JOptionPane.showMessageDialog(null, "SE AGREGÓ CON EXITO AL USUARIO");
