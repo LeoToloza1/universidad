@@ -62,6 +62,11 @@ public class main {
         ResultSet rs = alu.getRs();
         Alumno alu1 = new Alumno();
         String[] array = new String[4];
+        rs.next();
+        System.out.println("probando doble while");
+        System.out.println(rs.getString("fecha_nacimiento"));
+        rs.beforeFirst();
+
         while (rs.next()) {
             System.out.println(rs.getString("fecha_nacimiento"));
             alu1.setApellido(rs.getString("apellido"));
